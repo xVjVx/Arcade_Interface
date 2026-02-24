@@ -30,9 +30,17 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panelDireitaContainer = new System.Windows.Forms.Panel();
+            this.panelDetalhesJogo = new System.Windows.Forms.Panel();
+            this.lblDescricaoJogo = new System.Windows.Forms.Label();
+            this.lblTagsJogo = new System.Windows.Forms.Label();
+            this.picIconeJogo = new System.Windows.Forms.PictureBox();
+            this.panelImagemFundo = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelDireitaContainer.SuspendLayout();
+            this.panelDetalhesJogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picIconeJogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelImagemFundo)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -41,7 +49,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45F));
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panelDireitaContainer, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -62,16 +70,76 @@
             this.flowLayoutPanel1.TabIndex = 0;
             this.flowLayoutPanel1.WrapContents = false;
             // 
-            // pictureBox1
+            // panelDireitaContainer
             // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::Arcade_Interface.Properties.Resources.iscte_logo;
-            this.pictureBox1.Location = new System.Drawing.Point(523, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(421, 506);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.panelDireitaContainer.AccessibleName = "panelDireitaContainer";
+            this.panelDireitaContainer.Controls.Add(this.panelDetalhesJogo);
+            this.panelDireitaContainer.Controls.Add(this.panelImagemFundo);
+            this.panelDireitaContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDireitaContainer.Location = new System.Drawing.Point(520, 0);
+            this.panelDireitaContainer.Margin = new System.Windows.Forms.Padding(0);
+            this.panelDireitaContainer.Name = "panelDireitaContainer";
+            this.panelDireitaContainer.Size = new System.Drawing.Size(427, 512);
+            this.panelDireitaContainer.TabIndex = 1;
+            // 
+            // panelDetalhesJogo
+            // 
+            this.panelDetalhesJogo.Controls.Add(this.lblDescricaoJogo);
+            this.panelDetalhesJogo.Controls.Add(this.lblTagsJogo);
+            this.panelDetalhesJogo.Controls.Add(this.picIconeJogo);
+            this.panelDetalhesJogo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDetalhesJogo.Location = new System.Drawing.Point(0, 0);
+            this.panelDetalhesJogo.Name = "panelDetalhesJogo";
+            this.panelDetalhesJogo.Size = new System.Drawing.Size(427, 512);
+            this.panelDetalhesJogo.TabIndex = 1;
+            // 
+            // lblDescricaoJogo
+            // 
+            this.lblDescricaoJogo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblDescricaoJogo.AutoEllipsis = true;
+            this.lblDescricaoJogo.Font = new System.Drawing.Font("Press Start 2P", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescricaoJogo.Location = new System.Drawing.Point(15, 310);
+            this.lblDescricaoJogo.Name = "lblDescricaoJogo";
+            this.lblDescricaoJogo.Size = new System.Drawing.Size(400, 193);
+            this.lblDescricaoJogo.TabIndex = 2;
+            this.lblDescricaoJogo.Text = "label1";
+            this.lblDescricaoJogo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblTagsJogo
+            // 
+            this.lblTagsJogo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTagsJogo.Font = new System.Drawing.Font("Press Start 2P", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTagsJogo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(149)))), ((int)(((byte)(219)))));
+            this.lblTagsJogo.Location = new System.Drawing.Point(15, 273);
+            this.lblTagsJogo.Name = "lblTagsJogo";
+            this.lblTagsJogo.Size = new System.Drawing.Size(400, 18);
+            this.lblTagsJogo.TabIndex = 1;
+            this.lblTagsJogo.Text = "label1";
+            this.lblTagsJogo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // picIconeJogo
+            // 
+            this.picIconeJogo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.picIconeJogo.Location = new System.Drawing.Point(115, 25);
+            this.picIconeJogo.Name = "picIconeJogo";
+            this.picIconeJogo.Size = new System.Drawing.Size(200, 200);
+            this.picIconeJogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picIconeJogo.TabIndex = 0;
+            this.picIconeJogo.TabStop = false;
+            // 
+            // panelImagemFundo
+            // 
+            this.panelImagemFundo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelImagemFundo.Image = global::Arcade_Interface.Properties.Resources.iscte_logo;
+            this.panelImagemFundo.Location = new System.Drawing.Point(0, 0);
+            this.panelImagemFundo.Name = "panelImagemFundo";
+            this.panelImagemFundo.Size = new System.Drawing.Size(427, 512);
+            this.panelImagemFundo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.panelImagemFundo.TabIndex = 0;
+            this.panelImagemFundo.TabStop = false;
             // 
             // Form1
             // 
@@ -86,7 +154,10 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panelDireitaContainer.ResumeLayout(false);
+            this.panelDetalhesJogo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picIconeJogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelImagemFundo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -95,7 +166,12 @@
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panelDireitaContainer;
+        private System.Windows.Forms.PictureBox panelImagemFundo;
+        private System.Windows.Forms.Panel panelDetalhesJogo;
+        private System.Windows.Forms.PictureBox picIconeJogo;
+        private System.Windows.Forms.Label lblTagsJogo;
+        private System.Windows.Forms.Label lblDescricaoJogo;
     }
 }
 
