@@ -24,6 +24,9 @@ namespace Arcade_Interface
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            Form2 intro = new Form2();
+            intro.ShowDialog();
+
             panelDetalhesJogo.Visible = false;
             panelImagemFundo.Visible = true;
 
