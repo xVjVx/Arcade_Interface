@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.IO;
 using System.Windows.Forms;
+using System.Linq;
 
 namespace Arcade_Interface
 {
@@ -18,8 +20,6 @@ namespace Arcade_Interface
             this.BackColor = Color.FromArgb(205, 205, 205);
             flowLayoutPanel1.BackColor = Color.Transparent;
             this.DoubleBuffered = true;
-
-            this.Load += new EventHandler(Form1_Load);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -43,7 +43,7 @@ namespace Arcade_Interface
             }
 
             // Back button configuration
-            btnBack = new Button();
+            btnBack = new ArcadeButton();
             btnBack.Text = "< BACK";
             btnBack.Font = new Font("Press Start 2P", 12, FontStyle.Bold);
             btnBack.Location = new Point(20, 20);
@@ -111,16 +111,29 @@ namespace Arcade_Interface
 
             bool isRoot = (path == rootPath);
 
-            string[] itemsFound = isRoot ? Directory.GetDirectories(path) : Directory.GetFiles(path, "*.exe");
+            string[] itemsFound;
+
+            if (isRoot)
+            {
+                itemsFound = Directory.GetDirectories(path);
+            }
+            else
+            {
+                string[] jogosExe = Directory.GetFiles(path, "*.exe");
+                string[] jogosAtalhos = Directory.GetFiles(path, "*.lnk");
+                string[] jogosPy = Directory.GetFiles(path, "*.py");
+
+                itemsFound = jogosExe.Concat(jogosAtalhos).Concat(jogosPy).ToArray();
+            }
 
             foreach (string item in itemsFound)
             {
-                Button btn = new Button();
+                Button btn = new ArcadeButton();
 
                 string itemName = isRoot ? Path.GetFileName(item) : Path.GetFileNameWithoutExtension(item);
                 itemName = itemName.ToUpper();
 
-                btn.Width = flowLayoutPanel1.Width - 40;
+                btn.Width = 700;
                 btn.Height = 100;
 
                 float fontSize = 32f;
@@ -197,12 +210,27 @@ namespace Arcade_Interface
             panelImagemFundo.Visible = false;
             panelDetalhesJogo.Visible = true;
 
+            string pathPng = Path.ChangeExtension(pathExe, ".png");
+
             try
             {
-                Icon icone = Icon.ExtractAssociatedIcon(pathExe);
-                if (icone != null)
+                if (picIconeJogo.Image != null)
                 {
-                    picIconeJogo.Image = icone.ToBitmap();
+                    picIconeJogo.Image.Dispose();
+                    picIconeJogo.Image = null;
+                }
+
+                if (File.Exists(pathPng))
+                {
+                    picIconeJogo.Image = Image.FromFile(pathPng);
+                }
+                else
+                {
+                    Icon icone = Icon.ExtractAssociatedIcon(pathExe);
+                    if (icone != null)
+                    {
+                        picIconeJogo.Image = icone.ToBitmap();
+                    }
                 }
             }
             catch
@@ -239,6 +267,51 @@ namespace Arcade_Interface
             {
                 lblTagsJogo.Text = "Tags: N/A";
                 lblDescricaoJogo.Text = "Ficheiro de informações não encontrado para este jogo.";
+            }
+        }
+    }
+
+    public class ArcadeButton : Button
+    {
+        private int borderSize = 3;
+        private int borderRadius = 20;
+        private Color borderColor = Color.Black;
+
+        public ArcadeButton()
+        {
+            this.FlatStyle = FlatStyle.Flat;
+            this.FlatAppearance.BorderSize = 0;
+            this.BackColor = Color.Transparent;
+        }
+
+        private GraphicsPath GetFigurePath(RectangleF rect, float radius)
+        {
+            GraphicsPath path = new GraphicsPath();
+            float curveSize = radius * 2F;
+            path.StartFigure();
+            path.AddArc(rect.X, rect.Y, curveSize, curveSize, 180, 90);
+            path.AddArc(rect.Right - curveSize, rect.Y, curveSize, curveSize, 270, 90);
+            path.AddArc(rect.Right - curveSize, rect.Bottom - curveSize, curveSize, curveSize, 0, 90);
+            path.AddArc(rect.X, rect.Bottom - curveSize, curveSize, curveSize, 90, 90);
+            path.CloseFigure();
+            return path;
+        }
+
+        protected override void OnPaint(PaintEventArgs pevent)
+        {
+            base.OnPaint(pevent);
+            pevent.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+
+            RectangleF rectSurface = new RectangleF(0, 0, this.Width, this.Height);
+            RectangleF rectBorder = new RectangleF(1, 1, this.Width - 2, this.Height - 2);
+
+            using (GraphicsPath pathSurface = GetFigurePath(rectSurface, borderRadius))
+            using (GraphicsPath pathBorder = GetFigurePath(rectBorder, borderRadius - 1))
+            using (Pen penBorder = new Pen(borderColor, borderSize))
+            {
+                this.Region = new Region(pathSurface);
+
+                pevent.Graphics.DrawPath(penBorder, pathBorder);
             }
         }
     }

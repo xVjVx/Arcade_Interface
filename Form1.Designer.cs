@@ -100,9 +100,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDescricaoJogo.AutoEllipsis = true;
             this.lblDescricaoJogo.Font = new System.Drawing.Font("Press Start 2P", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescricaoJogo.Location = new System.Drawing.Point(15, 310);
+            this.lblDescricaoJogo.Location = new System.Drawing.Point(3, 316);
             this.lblDescricaoJogo.Name = "lblDescricaoJogo";
-            this.lblDescricaoJogo.Size = new System.Drawing.Size(400, 193);
+            this.lblDescricaoJogo.Size = new System.Drawing.Size(421, 193);
             this.lblDescricaoJogo.TabIndex = 2;
             this.lblDescricaoJogo.Text = "label1";
             this.lblDescricaoJogo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -111,21 +111,22 @@
             // 
             this.lblTagsJogo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblTagsJogo.Font = new System.Drawing.Font("Press Start 2P", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTagsJogo.Font = new System.Drawing.Font("Press Start 2P", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTagsJogo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(149)))), ((int)(((byte)(219)))));
-            this.lblTagsJogo.Location = new System.Drawing.Point(15, 273);
+            this.lblTagsJogo.Location = new System.Drawing.Point(3, 265);
             this.lblTagsJogo.Name = "lblTagsJogo";
-            this.lblTagsJogo.Size = new System.Drawing.Size(400, 18);
+            this.lblTagsJogo.Size = new System.Drawing.Size(421, 26);
             this.lblTagsJogo.TabIndex = 1;
             this.lblTagsJogo.Text = "label1";
             this.lblTagsJogo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // picIconeJogo
             // 
-            this.picIconeJogo.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.picIconeJogo.Location = new System.Drawing.Point(115, 25);
+            this.picIconeJogo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.picIconeJogo.Location = new System.Drawing.Point(3, 3);
             this.picIconeJogo.Name = "picIconeJogo";
-            this.picIconeJogo.Size = new System.Drawing.Size(200, 200);
+            this.picIconeJogo.Size = new System.Drawing.Size(424, 209);
             this.picIconeJogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picIconeJogo.TabIndex = 0;
             this.picIconeJogo.TabStop = false;
