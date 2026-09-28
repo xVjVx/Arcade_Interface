@@ -1,0 +1,16 @@
+C:\Users\jaime\Documents\Things\Arcade_Interface\bin\Debug\Arcade_Interface.exe.config
+C:\Users\jaime\Documents\Things\Arcade_Interface\bin\Debug\Arcade_Interface.exe
+C:\Users\jaime\Documents\Things\Arcade_Interface\bin\Debug\Arcade_Interface.pdb
+C:\Users\jaime\Documents\Things\Arcade_Interface\bin\Debug\Interop.WMPLib.dll
+C:\Users\jaime\Documents\Things\Arcade_Interface\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\jaime\Documents\Things\Arcade_Interface\obj\Debug\Arcade_Interface.csproj.AssemblyReference.cache
+C:\Users\jaime\Documents\Things\Arcade_Interface\obj\Debug\Interop.WMPLib.dll
+C:\Users\jaime\Documents\Things\Arcade_Interface\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\jaime\Documents\Things\Arcade_Interface\obj\Debug\Arcade_Interface.csproj.ResolveComReference.cache
+C:\Users\jaime\Documents\Things\Arcade_Interface\obj\Debug\Arcade_Interface.Form1.resources
+C:\Users\jaime\Documents\Things\Arcade_Interface\obj\Debug\Arcade_Interface.Form2.resources
+C:\Users\jaime\Documents\Things\Arcade_Interface\obj\Debug\Arcade_Interface.Properties.Resources.resources
+C:\Users\jaime\Documents\Things\Arcade_Interface\obj\Debug\Arcade_Interface.csproj.GenerateResource.cache
+C:\Users\jaime\Documents\Things\Arcade_Interface\obj\Debug\Arcade_Interface.csproj.CoreCompileInputs.cache
+C:\Users\jaime\Documents\Things\Arcade_Interface\obj\Debug\Arcade_Interface.exe
+C:\Users\jaime\Documents\Things\Arcade_Interface\obj\Debug\Arcade_Interface.pdb
